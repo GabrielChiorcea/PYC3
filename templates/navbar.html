@@ -1,0 +1,26 @@
+
+<!-- templates/navbar.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+</head>
+<body>
+<nav>
+    <div class="container" >
+        <div>
+            <span class="logo">PYC3</span>
+        </div>
+        <div class="list-container">
+            <span class="list" ><a  class= 'arc' href="{{ url_for('frontpage') }}">Home</a></span>
+            <span class="list" ><a class= 'arc' href="{{ url_for('singpage') }}">Sing up</a></span>
+            <span class="list" ><a class= 'arc' href="{{ url_for('logpage') }}">Login</a></span>
+        </div>
+    </div>
+   
+</nav>
+
+</body>
+</html>
