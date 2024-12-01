@@ -1,0 +1,128 @@
+.api {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    background-color: #333;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    margin: 100px 0px 30px 0px;
+    height: 200px;
+}
+
+.api-string {
+    font-size: 1.5em;
+}
+
+.api-container {
+    background-color: black;
+    color: blue;
+    padding: 10px;
+    display: none; /* Inițial ascuns */
+}
+
+.api-container-placeholder {
+    /* Stiluri pentru spațiul rezervat */
+    background-color: #ddd;
+    padding: 10px;
+    text-align: center;
+    color: #666;
+    width: 100%;
+}
+
+.button-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 200px;
+}
+
+.get {
+    padding: 15px;
+    border-radius: 30px;
+    border: 1px solid #1E90FF;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    background-color: #1C1C1C; 
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.get:hover {
+    background-color: #4169E1; /* O nuanță de albastru mai închis la hover */
+    transform: scale(1.1);
+
+}
+
+.error{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: #1C1C1C;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    height: auto;
+}
+
+.error-container-placeholder {
+    background-color: #1C1C1C;
+    padding: 10px;
+    text-align: left;
+    color: greenyellow;
+    width: 100%;
+    max-height: 300px; 
+    overflow-y: auto;
+}
+
+.documentation-row {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.row {
+    background-color:  #1C1C1C;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    width: 30%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.row span {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #30a2ff;
+}
+
+.row p {
+    color: #30a2ff;
+}
+
+.list-doc {
+    color: #30a2ff;
+    list-style-type: none;
+    padding: 0;
+}
+
+.list-doc li {
+    background-color: #000000;
+    padding: 5px;
+    margin: 5px 0;
+    border-radius: 3px;
+}
+
+.list-doc li:first-child {
+    margin-top: 0;
+}
+
+.list-doc li:last-child {
+    margin-bottom: 0;
+}

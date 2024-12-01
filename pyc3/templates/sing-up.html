@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+    <title>PYC3</title>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <main class="form-container">
+        <h1>Sing Up</h1>
+    <div class="login-container">
+        <form method="POST" action="/sing-up">
+            {{ form.csrf_token }}
+            {{ form.hidden_tag() }}
+            {% with messages = get_flashed_messages() %}
+            <pre class="message">{{ messages }}</pre>
+            {% if messages %}
+                <div class="flashes">
+            {% for message in messages %}
+                    <span class="flash">{{ message }}</span>
+            {% endfor %}
+                </div>
+            {% endif %}
+            {% endwith %}
+            <div class="form-group">
+                <label class="lab" aria-placeholder="Without space" for="username">Username:</label>
+                {{ form.name(class="form-control", placeholder="Without space") }}
+            </div>
+
+            <div class="form-group">
+                <label class="lab" for="password">Password:</label>
+                {{ form.password(class="form-control") }}
+            </div>
+            <div class="submit">
+              <button type="submit" class="submit-btn">Submit</button>
+            </div>
+        </form>
+    </div>
+    {% include 'footer.html' %}
+</body>
+</html>

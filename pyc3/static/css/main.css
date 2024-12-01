@@ -1,0 +1,149 @@
+.footer {
+    background-color: #1C1C1C; /* Un negru mai cald pentru fundal */
+    color: #FFF; /* Alb pentru text */
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+.frontpage-main {
+    margin-top: 100px;
+}
+
+.frontpage-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    width: auto;
+    height: auto;
+}
+
+.frontpage-container_logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.frontpage-container_about {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.container_about__list {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+}
+
+.super-container {
+    background-color: #47FFFB; /* Cyan pentru fundal */
+    width: auto;
+    height: auto;
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.super-logo {
+    font-size: 150px;
+    color: #1C1C1C; /* Un negru mai cald pentru text */
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.frontpage-container_about h2 {
+    font-size: 36px;
+    color: #47FFFB; /* Cyan pentru text */
+    margin-bottom: 20px;
+}
+
+.container_about__list span {
+    font-size: 18px;
+    color: #E0E0E0; /* Alb cald pentru text */
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.container_about__list span:last-child {
+    margin-bottom: 0;
+}
+
+/* Efect la hover pentru logo */
+.super-logo:hover {
+    transform: rotate(360deg);
+    transition: transform 0.5s ease;
+}
+
+
+.account-container {
+    background-color: #333; /* Un gri închis pentru fundal */
+    color: #FFF; /* Alb pentru text */
+    padding: 20px;
+    margin-top: 100px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.text {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.account-btn {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    background-color: #47FFFB; /* Cyan pentru fundalul butonului */
+    color: #333; /* Gri închis pentru textul butonului */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #1C1C1C; /* Un negru mai cald la hover */
+    color: #FFF; /* Alb la hover */
+}
+
+.list-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #47FFFB; /* Cyan pentru fundalul butonului */
+    color: #333; /* Gri închis pentru textul butonului */
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.list-button:hover {
+    background-color: #1C1C1C; /* Un negru mai cald la hover */
+    color: #FFF; /* Alb la hover */
+}
+
+.message{
+    display: none;
+}
+
+.flashes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flash{
+    color: red;
+
+}

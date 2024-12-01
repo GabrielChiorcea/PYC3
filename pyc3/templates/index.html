@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <title>PYC3</title>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <main class="frontpage-main">
+        <div class="frontpage-container">
+            <div class="frontpage-container_about" >
+                <h2>About</h2>
+                <div class="container_about__list">
+                    <span>PYC3 is the backend responsible for handling Excel data.</span>
+                    <span>The interface allows you to create an API address for your application.</span>
+                    <span>The GUI comes with an error log and documentation on how to organize JSON in your application.</span>
+                </div>
+            </div>
+            <div class="frontpage-container_logo"  >
+                <div class="super-container">
+                    <span class="super-logo">PYC3</span>
+                </div>
+            </div>
+        </div>
+        <div class="account-container" >
+        <h2 class="text">For use the API you must be in you account</h2>
+        <div class="account-btn" >
+            <a class="list-button" href="{{ url_for('singpage') }}">Sign Up</a>
+            <a class="list-button" href="{{ url_for('logpage') }}">Login</a>
+                </div>
+    </div>
+    </main>
+    {% include 'footer.html' %}
+
+</body>
+</html>
+
