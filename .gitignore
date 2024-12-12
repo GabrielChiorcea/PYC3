@@ -1,0 +1,66 @@
+# Fișiere și directoare Python
+__pycache__/
+*.py[cod]
+*.egg
+*.egg-info/
+.eggs/
+*.pyo
+*.pyd
+
+# Fișierele generate de environment-uri virtuale
+env/
+venv/
+ENV/
+ENV.bak/
+venv.bak/
+
+# Fișierele de configurare pentru IDE-uri
+.idea/
+.vscode/
+*.swp
+
+# Fișiere de log
+*.log
+
+# Fișiere și directoare de build
+build/
+dist/
+*.egg-info/
+.installed.cfg
+*.egg
+.eggs/
+
+# Fișiere temporare
+*.bak
+*.tmp
+*.temp
+
+# Fișiere și directoare de la testare
+.coverage
+.tox/
+.nox/
+htmlcov/
+.pytest_cache/
+.coverage.*
+
+# Fișiere de configurare pentru Docker
+docker-compose.override.yml
+
+# Fișiere de configurare pentru Heroku
+*.local
+*.pid
+
+# Fișiere de configurare pentru editori de text
+*.sublime-project
+*.sublime-workspace
+
+# Fișiere de configurare pentru Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Fișiere binare și librării
+bin/
+lib/
+
+# Fișiere specifice sistemului de operare
+.DS_Store
+Thumbs.db

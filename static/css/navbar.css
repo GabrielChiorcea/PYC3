@@ -1,0 +1,77 @@
+body {
+    background-color: #1C1C1C; 
+    color: #E0E0E0; 
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a.arc {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.logo {
+    color: white;
+    font-size: 40px;
+    font-weight: 900;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px;
+    border: 2px solid #4682B4; /* O nuanță de albastru deschis pentru bordură */
+    color: #000000;
+    margin: 5px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.list-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 500px;
+}
+
+.list {
+    
+    padding: 15px;
+    border-radius: 30px;
+    border: 1px solid #1E90FF;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.list:hover {
+    background-color: #4169E1; /* O nuanță de albastru mai închis la hover */
+    transform: scale(1.1);
+}
+
+.log-cont{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.log-out {
+    background-color: #dc354681; 
+    color: #fff; 
+    padding: 10px 20px; 
+    border: none; 
+    cursor: pointer; 
+    font-size: 16px; 
+    border-radius: 5px;
+}
+
+.log-out:hover{
+    background-color: #dc3545; 
+}

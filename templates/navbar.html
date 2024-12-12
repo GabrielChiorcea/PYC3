@@ -1,0 +1,47 @@
+
+<!-- templates/navbar.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+</head>
+<body>
+<nav>
+    <div class="container" >
+        <div>
+            <span class="logo">PYC3</span>
+        </div>
+            {% if session.get('logged_in')%}
+            <div class="log-cont">
+            <form id="logoutForm" action="{{ url_for('logout') }}" method="post">
+                <button class="log-out" type="button" onclick="logout()">Log Out</button>
+            </form>
+            </div>
+            {%  else %}
+            <div class="list-container">
+            <span class="list" ><a  class= 'arc' href="{{ url_for('frontpage') }}">Home</a></span>
+            <span class="list" ><a class= 'arc' href="{{ url_for('singpage') }}">Sing up</a></span>
+            <span class="list" ><a class= 'arc' href="{{ url_for('start') }}">Create account</a></span>
+             </div>
+            {% endif %}
+    </div>
+   
+</nav>
+
+<script>
+    function logout() {
+        fetch('{{ url_for("logout") }}', {
+            method: 'GET',  
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data.message);
+
+            window.location.href = '{{ url_for("sing") }}';
+        });
+    }
+</script>
+</body>
+</html>

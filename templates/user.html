@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/user.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <title>PYC3</title>
+</head>
+<body>
+
+    {% include 'navbar.html' %}
+
+    <div class="api">
+        <span class="api-string">API</span>
+        <div class="api-container-placeholder">
+            <span id="response">Wait for API</span>
+        </div>
+        <div class="button-container">
+            <button class="get" id="api">Get API</button>
+            <button class="get" id="error-log">Error log</button> 
+    
+        </div>
+
+    </div>
+
+    <div class="error">
+        <div class="error-container-placeholder " id="log">
+        </div>
+    </div>
+
+
+    <div class="documentation-row">
+        <div class="row">
+            <span>Count null value</span>
+            <p> The object will come in this format </p>
+            <ul class="list-doc">
+                <li>Punct 1</li>
+                <li>Punct 2</li>
+                <li>Punct 3</li>
+            </ul>
+        </div>
+        <div class="row">
+            <span>Extract value</span>
+            <p> The object will come in this format </p>
+            <ul class="list-doc">
+                <li>Punct 4</li>
+                <li>Punct 5</li>
+                <li>Punct 6</li>
+            </ul>
+        </div>
+        <div class="row">
+            <span>Excel summary</span>
+            <p> The object will come in this format </p>
+            <ul class="list-doc">
+                <li>Punct 4</li>
+                <li>Punct 5</li>
+                <li>Punct 6</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="documentation-row">
+        <div class="row">
+            <span>fill NAN W 0</span>
+            <p> The object will come in this format </p>
+            <ul class="list-doc">
+                <li>Punct 7</li>
+                <li>Punct 8</li>
+                <li>Punct 9</li>
+            </ul>
+        </div>
+        <div class="row">
+            <span>Chart</span>
+            <p> The object will come in this format </p>
+            <ul class="list-doc">
+                <li>Punct 4</li>
+                <li>Punct 5</li>
+                <li>Punct 6</li>
+            </ul>
+        </div>
+    </div>
+
+    
+
+    <script>
+        document.getElementById("api").addEventListener("click", function() {
+            fetch('{{ url_for("give_api") }}')  // Utilizează url_for pentru a genera ruta corectă în Flask
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("response").innerHTML = data.message;
+                });
+        });
+
+        document.getElementById('error-log').addEventListener('click', () => {
+            fetch('{{ url_for("errors") }}')
+            .then(response => response.json())
+            .then(data =>{
+
+                const container = document.getElementById("log")
+                container.innerHTML = ''
+
+                data.forEach(entry => {
+                const paragraph = document.createElement("p");
+                paragraph.textContent = `${entry.timestamp}, Error: ${entry.error_message}`;
+                container.appendChild(paragraph);
+            });
+
+            } )
+        })
+
+    </script>
+
+
+</body>
+</html>
