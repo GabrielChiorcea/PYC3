@@ -16,7 +16,7 @@ import io
 app = Flask(__name__)
 app.debug = True
 app.config['SECRET_KEY'] = 'secret_key'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://gabrielc_excelstorepy:Eva1Japo2@85.9.63.171:3306/gabrielc_excelstorepy'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://gabrielc_excelstorepy:Eva1Japo2@127.0.0.1:3306/gabrielc_excelstorepy'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 CORS(app, origins=["*"], supports_credentials=True, methods=["GET", "POST", "PUT", "DELETE"])
 # CORS(app, origins="*")
