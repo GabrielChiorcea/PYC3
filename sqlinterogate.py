@@ -1,5 +1,5 @@
 from werkzeug.security import check_password_hash, generate_password_hash
-from flask import redirect, render_template, session, jsonify, flash
+from flask import redirect, render_template, session, jsonify, flash, request
 from wtforms.validators import ValidationError
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import LargeBinary
@@ -38,23 +38,23 @@ class Excel(db.Model):
 class UserEnter():
     def create(self):
         form = Create()
-        try:
-         if form.validate_on_submit():
-                current_datetime = datetime.now() 
+        if request.method == 'POST':
+            if form.validate_on_submit():
+                current_datetime = datetime.now()
                 name = form.name.data
                 password = form.password.data
                 user_identification = name[:3] + str(current_datetime.day) + name[-3:] + str(current_datetime.month)
                 user = User.query.filter_by(username=name).first()
-                if (user): 
-                    form.validate_username(True)
+                if user:
+                    flash('Acest user este folosit.', 'error')
+                    return render_template('create.html', form=form)
                 hashed_password = generate_password_hash(password, method='pbkdf2:sha256')
-                new = User(username=name, password=hashed_password, identification=user_identification)
-                db.session.add(new)
+                new_user = User(username=name, password=hashed_password, identification=user_identification)
+                db.session.add(new_user)
                 db.session.commit()
                 return redirect('sing-up')
-        except ValidationError as e:
-            flash('Acest user este folosit.')
-            return render_template('create.html' , form=form)
+            else:
+                flash('Formularul conține erori. Vă rugăm să verificați și să încercați din nou.', 'error')
         return render_template('create.html', form=form)
     
     def sing(self):

@@ -33,29 +33,35 @@
     <div class="documentation-row">
         <div class="row">
             <span>Count null value</span>
+            <p>The resp_get_null method calculates the total number of NaN values in the DataFrame and returns a JSON response with the session ID and the count of NaN values. If an error occurs, it returns a JSON error message.</p>
             <p> The object will come in this format </p>
             <ul class="list-doc">
-                <li>Punct 1</li>
-                <li>Punct 2</li>
-                <li>Punct 3</li>
+                <li>sessionID : id(number and string)</li>
+                <li>value : string</li>            
             </ul>
         </div>
         <div class="row">
             <span>Extract value</span>
+            <p>The resp_get_ex_val method randomly selects a column and a value from the DataFrame, identifies the row indices where this value occurs, and returns a JSON response with the session ID, value, column name, and row indices. It handles strings, NaN, and numeric values. If an error occurs, it returns a JSON error message.</p>
             <p> The object will come in this format </p>
             <ul class="list-doc">
-                <li>Punct 4</li>
-                <li>Punct 5</li>
-                <li>Punct 6</li>
+                <li> sessionID : id(number and string)</li>
+                <li>value : string</li>
+                <li>columns : string</li>
+                <li>row : string</li>
             </ul>
         </div>
         <div class="row">
             <span>Excel summary</span>
+            <p>The resp_get_ex_sumar method summarizes the DataFrame by calculating maximum values for numeric columns, converting data types to strings, and filtering out NaN values. It returns a JSON response with column data types, the number of rows and columns, and the maximum and minimum values. If an error occurs, it returns a JSON error message.</p>
             <p> The object will come in this format </p>
             <ul class="list-doc">
-                <li>Punct 4</li>
-                <li>Punct 5</li>
-                <li>Punct 6</li>
+                <li> sessionID : id(number and string)</li>
+                <li>col_dtypes : array</li>
+                <li>rows : array</li>
+                <li>columns : array</li>
+               <li>max_value : string</li>
+               <li>min_value : string</li>
             </ul>
         </div>
     </div>
@@ -63,20 +69,21 @@
     <div class="documentation-row">
         <div class="row">
             <span>fill NAN W 0</span>
+            <p>The ResponseFill class extends ExcelReader and processes an Excel file to fill NaN values. The highlight_null method is a static method that replaces NaN values with 0 and marks them as modified. The fill_na method iterates through the DataFrame, applies highlight_null to each value, and constructs a result dictionary with the modified values and their statuses. If an error occurs, it returns a JSON error message.</p>
             <p> The object will come in this format </p>
             <ul class="list-doc">
-                <li>Punct 7</li>
-                <li>Punct 8</li>
-                <li>Punct 9</li>
+                <li> sessionID : id(number and string)</li>
+                <li>value : string</li>
+                <li>status : string</li>
             </ul>
         </div>
         <div class="row">
             <span>Chart</span>
+            <p>The Chart class extends ExcelReader and generates charts from an Excel file. The generare_grafic_to_send method retrieves JSON data from the request, extracts specified columns from the DataFrame, and removes rows with NaN values. It creates a bar chart, saves it to a BytesIO object, and returns the chart image as an HTTP response with the MIME type image/png. If an error occurs, it returns a JSON error message.</p>
             <p> The object will come in this format </p>
             <ul class="list-doc">
-                <li>Punct 4</li>
-                <li>Punct 5</li>
-                <li>Punct 6</li>
+                <li>return send_file(img_buf, mimetype='image/png'), 200</li>
+                
             </ul>
         </div>
     </div>
@@ -114,3 +121,5 @@
 
 </body>
 </html>
+
+

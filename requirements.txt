@@ -1,1 +1,8 @@
+flask
+flask_cors
 flask_sqlalchemy
+flask_wtf
+flask_restful
+pandas
+pymysql
+matplotlib
